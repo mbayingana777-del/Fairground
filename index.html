@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fairground Market Catering | Pig Roasts & Catering in Prospect, PA</title>
+  <meta name="description" content="Fairground Market Catering — Pig roasts and catering for all occasions. Fresh, homemade food and friendly service. Call for a quote." />
+
+  <style>
+    :root{
+      /* Retro / “classic” palette */
+      --cream:#fbf3df;
+      --paper:#fff8ea;
+      --ink:#1f1a14;
+      --muted:#5c4c3c;
+
+      --orange:#f2a23a;
+      --orange2:#e58a18;
+      --gold:#ffd27a;
+
+      --border:#d9c6a7;
+      --shadow: 0 10px 30px rgba(0,0,0,.12);
+      --radius: 18px;
+
+      --max: 1080px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(800px 500px at 10% 0%, rgba(242,162,58,.22), transparent 60%),
+        radial-gradient(800px 500px at 90% 0%, rgba(229,138,24,.16), transparent 60%),
+        linear-gradient(180deg, var(--cream), #fff);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.45;
+    }
+
+    /* Top “retro bar” */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: linear-gradient(180deg, #fff, var(--paper));
+      border-bottom: 4px solid var(--orange);
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 240px;
+    }
+    .brand-badge{
+      width:44px; height:44px;
+      border-radius:12px;
+      border:2px solid var(--border);
+      background: linear-gradient(180deg, #fff, #fff3dd);
+      display:grid; place-items:center;
+      box-shadow: 0 8px 18px rgba(0,0,0,.10);
+      font-weight:900;
+      color:var(--orange2);
+    }
+    .brand h1{
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:18px;
+      line-height:1.1;
+      margin:0;
+      letter-spacing:.2px;
+    }
+    .brand small{
+      display:block;
+      color:var(--muted);
+      font-weight:600;
+      margin-top:2px;
+      font-size:12px;
+    }
+
+    .links{
+      margin-left:auto;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+    }
+    .links a{
+      text-decoration:none;
+      color:var(--ink);
+      font-weight:700;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .links a:hover{
+      border-color: var(--border);
+      background: #fff;
+    }
+
+    .cta{
+      margin-left:8px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:2px solid var(--ink);
+      background: linear-gradient(180deg, #fff, #fff3dd);
+      text-decoration:none;
+      color:var(--ink);
+      font-weight:900;
+      box-shadow: 0 8px 18px rgba(0,0,0,.10);
+      white-space:nowrap;
+    }
+    .btn.primary{
+      border-color: #9a4f00;
+      background: linear-gradient(180deg, var(--orange), var(--orange2));
+      color:#1b1208;
+    }
+    .btn:active{transform: translateY(1px); box-shadow: 0 6px 14px rgba(0,0,0,.10);}
+
+    /* Page layout */
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 60px;}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:16px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, #fff, var(--paper));
+      border:2px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-left{padding:18px 18px 16px;}
+    .tag{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-weight:800;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .title{
+      margin:12px 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:40px;
+      line-height:1.05;
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 58ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .proof{
+      margin-top:16px;
+      padding-top:16px;
+      border-top:2px dashed var(--border);
+    }
+    .proof h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+      text-transform: uppercase;
+      color:var(--muted);
+    }
+    .reviews{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+    }
+    .review{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:12px 12px 10px;
+    }
+    .review .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:6px;
+    }
+    .review .name{
+      font-weight:900;
+    }
+    .stars{
+      letter-spacing:1px;
+      font-size:14px;
+      white-space:nowrap;
+      color:#a35200;
+      font-weight:900;
+    }
+    .review p{
+      margin:0;
+      color:#2b241d;
+      font-size:14px;
+    }
+    .review small{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:12px;
+    }
+
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+    }
+    .logo-panel{
+      padding:14px;
+      display:grid;
+      gap:10px;
+    }
+    .logo-img{
+      width:100%;
+      height:260px;
+      border-radius:16px;
+      border:2px solid var(--border);
+      background:#fff;
+      object-fit:cover;
+      box-shadow: 0 10px 22px rgba(0,0,0,.10);
+    }
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .pill{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:12px;
+    }
+    .pill b{display:block; margin-bottom:4px;}
+    .pill span{color:var(--muted); font-weight:700;}
+
+    /* Sections */
+    section{margin-top:22px;}
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:10px;
+    }
+    .section-head h2{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size:26px;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .box{
+      padding:14px;
+      background: linear-gradient(180deg, #fff, var(--paper));
+      border:2px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 22px rgba(0,0,0,.08);
+    }
+    .box h3{margin:0 0 6px; font-size:16px;}
+    .box p{margin:0; color:var(--muted); font-weight:650; font-size:14px;}
+
+    .menu{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+    }
+    .menu ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:#2b241d;
+      font-weight:650;
+    }
+    .menu li{margin:6px 0;}
+    .note{
+      margin-top:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      padding:10px 12px;
+      border-radius:14px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    label{display:block; font-weight:800; margin:10px 0 6px;}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      outline:none;
+      font: inherit;
+      background:#fff;
+    }
+    textarea{min-height:110px; resize:vertical;}
+    .form-actions{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;}
+    .fineprint{color:var(--muted); font-weight:700; font-size:12px; margin-top:10px;}
+
+    footer{
+      margin-top:26px;
+      padding-top:14px;
+      border-top:2px dashed var(--border);
+      color:var(--muted);
+      font-weight:700;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr;}
+      .menu{grid-template-columns: 1fr;}
+      .grid-3{grid-template-columns: 1fr;}
+      .contact{grid-template-columns: 1fr;}
+      .brand{min-width:unset}
+      .title{font-size:34px;}
+      .links{display:none;} /* keeps it clean on mobile */
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge">FM</div>
+        <div>
+          <h1>Fairground Market Catering</h1>
+          <small>Pig Roasts & Catering • Prospect, PA</small>
+        </div>
+      </div>
+
+      <nav class="links" aria-label="Primary">
+        <a href="#reviews">Reviews</a>
+        <a href="#services">Catering</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="tel:+18669239822">Call (866) 923-9822</a>
+        <a class="btn primary" href="#contact">Request a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card hero-left">
+        <span class="tag">🐷 Pig Roasts • Weddings • Parties • Corporate • “All Occasions”</span>
+        <h2 class="title">Bring the “wow” to your next event.</h2>
+        <p class="subtitle">
+          Fresh, homemade-style food with friendly, detail-focused service — and a pig roast that people remember.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="tel:+18669239822">Call for pricing</a>
+          <a class="btn" href="#menu">See popular menu picks</a>
+          <a class="btn" href="#services">What we cater</a>
+        </div>
+
+        <!-- PROOF FIRST -->
+        <div id="reviews" class="proof">
+          <h2>Real customer love (proof up front)</h2>
+
+          <div class="reviews" aria-label="Customer reviews">
+            <div class="review">
+              <div class="row">
+                <div class="name">Gemma A.</div>
+                <div class="stars">★★★★★</div>
+              </div>
+              <p>
+                “Fairground Market catered my daughter's wedding reception. The food was excellent… Tom and crew you should be proud… We were 100% satisfied.”
+              </p>
+              <small>Wedding catering • Yelp review</small>
+            </div>
+
+            <div class="review">
+              <div class="row">
+                <div class="name">Morgan D.</div>
+                <div class="stars">★★★★★</div>
+              </div>
+              <p>
+                “The food is fresh and homemade. Big portions too! The staff is so kind and easy to talk to… a hidden gem… They also do catering and the prices are great!”
+              </p>
+              <small>Local favorite • Yelp review</small>
+            </div>
+
+            <div class="review">
+              <div class="row">
+                <div class="name">Wesley H.</div>
+                <div class="stars">★★★★☆</div>
+              </div>
+              <p>
+                “Order ahead… chicken was nicely seasoned, juicy and crispy… closer to air fried or rotisserie… delicious.”
+              </p>
+              <small>Prepared foods • Yelp review</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card hero-right">
+        <div class="logo-panel">
+          <!-- Pig/logo/sign image -->
+          <img
+            class="logo-img"
+            src="assets/pig-roasts-sign.png"
+            alt="Pig Roasts and Catering sign by Fairground Market"
+          />
+
+          <div class="mini-grid">
+            <div class="pill">
+              <b>Fast quotes</b>
+              <span>Tell us your date + headcount.</span>
+            </div>
+            <div class="pill">
+              <b>Stress-free service</b>
+              <span>Friendly, organized, on-time.</span>
+            </div>
+            <div class="pill">
+              <b>Big portions</b>
+              <span>Guests leave happy.</span>
+            </div>
+            <div class="pill">
+              <b>Local & trusted</b>
+              <span>Prospect, PA</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-head">
+        <h2>Catering for all occasions</h2>
+        <p>Weddings • Grad parties • Corporate • Family events</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="box">
+          <h3>🐷 Pig Roasts</h3>
+          <p>Signature crowd-pleaser. Perfect centerpiece for a memorable event.</p>
+        </div>
+        <div class="box">
+          <h3>🍽️ Full-Service Catering</h3>
+          <p>Buffet-style setups and event support so you can enjoy your own party.</p>
+        </div>
+        <div class="box">
+          <h3>🥘 Party Trays & Pickups</h3>
+          <p>Easy pickup options when you want great food without the fuss.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="section-head">
+        <h2>Popular menu picks</h2>
+        <p>Simple, tasty, and made to please a crowd</p>
+      </div>
+
+      <div class="menu">
+        <div class="box">
+          <h3>Event favorites</h3>
+          <ul>
+            <li>Pig roast + classic sides</li>
+            <li>Chicken (seasoned, juicy, crispy — order-ahead friendly)</li>
+            <li>Pasta trays & comfort-food classics</li>
+            <li>Party sides + dessert options</li>
+          </ul>
+          <div class="note">
+            Menu can vary — we’ll confirm options when you call, and we can help you build a spread for your budget.
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>What we’ll ask (so your quote is fast)</h3>
+          <ul>
+            <li>Date + event type</li>
+            <li>Guest count</li>
+            <li>Pickup or full service</li>
+            <li>Any must-have items</li>
+          </ul>
+          <div class="note">
+            Pro tip: If you’re on a deadline, call — we can lock details quickly.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-head">
+        <h2>Get a quote</h2>
+        <p>Call or send a quick request</p>
+      </div>
+
+      <div class="cont
